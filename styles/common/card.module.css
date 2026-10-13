@@ -1,0 +1,27 @@
+/* Card — bordered surface used for module previews, courses, jobs, achievements */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-4);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+/* Only cards that link somewhere get a hover state */
+.interactive:hover,
+.interactive:focus-within {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+/* Flat variant used on alternate backgrounds */
+.flat {
+  border-color: transparent;
+  background-color: var(--color-surface);
+}

@@ -1,0 +1,203 @@
+/* Learn page — filter bar and course cards */
+
+.filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  padding: var(--space-4);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+}
+
+.select {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-body);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.select:hover {
+  border-color: var(--color-primary);
+}
+
+.resultsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.resetButton {
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.resetButton:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ---------- Course cards ---------- */
+.courseGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.courseTop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.tag {
+  padding: 0 var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-body);
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-sm);
+}
+
+.tagLevel {
+  color: var(--color-text);
+  background-color: var(--color-bg-alt);
+}
+
+.courseTitle {
+  margin-bottom: var(--space-3);
+  font-size: var(--fs-h4);
+}
+
+.courseFacts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
+  font-size: var(--fs-small);
+}
+
+.courseFactLabel {
+  color: var(--color-text-muted);
+}
+
+.courseFactValue {
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+}
+
+.courseFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.courseFee {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+}
+
+.empty {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  color: var(--color-text-muted);
+  border: var(--border-width) dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+}
+
+/* ---------- Info strip under catalog ---------- */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-6) var(--grid-gap);
+  align-items: center;
+}
+
+.infoMedia,
+.infoContent {
+  grid-column: 1 / -1;
+}
+
+.infoImageWrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.infoImage {
+  object-fit: cover;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.infoItem {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.infoItem svg {
+  flex-shrink: 0;
+  width: var(--icon-md);
+  height: var(--icon-md);
+  margin-top: var(--space-1);
+  color: var(--color-accent);
+}
+
+@media (min-width: 600px) {
+  .filters {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .courseGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .courseGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--grid-gap);
+  }
+
+  .infoContent {
+    grid-column: 1 / span 6;
+  }
+
+  .infoMedia {
+    grid-column: 8 / -1;
+    grid-row: 1;
+  }
+}

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   COLORS — the only place colour values live.
+   Change a value here and every component that uses it updates.
+   ========================================================================== */
+
+:root {
+  /* Page background behind every section */
+  --color-bg: #ffffff;
+  /* Alternating section background (About, Stats-adjacent, FAQ, filters) */
+  --color-bg-alt: #f4f6f8;
+  /* Cards, modals, form fields, dropdown panels */
+  --color-surface: #ffffff;
+
+  /* Default paragraph and body text */
+  --color-text: #2b3440;
+  /* Secondary text: captions, meta info, helper text */
+  --color-text-muted: #5b6672;
+  /* All headings h1–h6 and card titles */
+  --color-heading: #0b2545;
+
+  /* Brand navy: primary buttons, active nav, links, stat band, page heroes */
+  --color-primary: #0b2545;
+  /* Hover/pressed state of primary buttons and links */
+  --color-primary-hover: #13315c;
+  /* Light tint of primary: tags, badges, active filter chips */
+  --color-primary-soft: #e6ecf4;
+
+  /* Accent (amber): small highlights, eyebrow labels, progress bars, focus ring */
+  --color-accent: #9a5b0a;
+  /* Accent tint used behind accent text (e.g. "Hiring" badges) */
+  --color-accent-soft: #fbf1e2;
+
+  /* Text placed on a primary/navy background */
+  --color-on-primary: #ffffff;
+  /* Muted text placed on a primary/navy background */
+  --color-on-primary-muted: #c3cfde;
+
+  /* Hairlines: card borders, dividers, input borders, sticky header border */
+  --color-border: #dde2e8;
+  /* Stronger border used on hover and for focused inputs */
+  --color-border-strong: #b7c0cb;
+
+  /* Trust strip partner names (grey logo placeholders) */
+  --color-logo-placeholder: #6b7581;
+
+  /* Form validation */
+  --color-error: #b42318;
+  --color-success: #1e7a46;
+
+  /* Footer */
+  --color-footer-bg: #081a31;
+  --color-footer-text: #b8c4d3;
+  /* Footer headings and hovered links */
+  --color-footer-heading: #ffffff;
+  /* Footer divider above the bottom bar */
+  --color-footer-border: #1f3350;
+
+  /* Dimmed backdrop behind the mobile menu and job modal */
+  --color-overlay: rgba(8, 26, 49, 0.55);
+  /* Dark scrim over hero/banner photos to keep text readable */
+  --color-image-scrim: rgba(11, 37, 69, 0.82);
+
+  /* Keyboard focus outline on every interactive element */
+  --color-focus: #9a5b0a;
+  /* Focus outline inside navy areas (footer, page heroes, CTA band) */
+  --color-focus-on-dark: #ffffff;
+}

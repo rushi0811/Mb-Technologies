@@ -1,0 +1,81 @@
+/* Button — used as <Link> or <button> via components/Button.jsx */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: calc(var(--space-2) + var(--space-1)) var(--space-4);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  white-space: nowrap;
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.button svg {
+  width: var(--icon-sm);
+  height: var(--icon-sm);
+}
+
+/* Solid navy */
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* Outlined on light backgrounds */
+.secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.secondary:hover {
+  background-color: var(--color-primary-soft);
+}
+
+/* White button on navy bands */
+.light {
+  background-color: var(--color-on-primary);
+  color: var(--color-primary);
+}
+
+.light:hover {
+  background-color: var(--color-primary-soft);
+}
+
+/* Outlined white on navy bands */
+.outlineLight {
+  background-color: transparent;
+  color: var(--color-on-primary);
+  border-color: var(--color-on-primary-muted);
+}
+
+.outlineLight:hover {
+  border-color: var(--color-on-primary);
+}
+
+.small {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-small);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

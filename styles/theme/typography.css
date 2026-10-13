@@ -1,0 +1,76 @@
+/* ==========================================================================
+   TYPOGRAPHY — font families, sizes, weights, line-heights, heading styles.
+   --font-manrope and --font-inter are injected by next/font in app/layout.js.
+   ========================================================================== */
+
+:root {
+  /* Headings, logo, stat numbers, buttons */
+  --font-heading: var(--font-manrope), "Segoe UI", system-ui, sans-serif;
+  /* Body copy, nav links, forms */
+  --font-body: var(--font-inter), "Segoe UI", system-ui, sans-serif;
+
+  /* Page and hero titles (scales down on small screens) */
+  --fs-h1: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  /* Section headings */
+  --fs-h2: clamp(1.625rem, 1.25rem + 1.6vw, 2.375rem);
+  /* Sub-section and modal titles */
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  /* Card titles */
+  --fs-h4: 1.1875rem;
+  /* Small card titles, footer column headings */
+  --fs-h5: 1.0625rem;
+  /* Overline / eyebrow labels */
+  --fs-h6: 0.875rem;
+
+  /* Large stat numbers in the stats band */
+  --fs-display: clamp(2.25rem, 1.8rem + 2vw, 3rem);
+  /* Hero subtext and intro paragraphs */
+  --fs-lead: 1.125rem;
+  /* Default paragraph text */
+  --fs-body: 1rem;
+  /* Meta text, captions, tags, footer bottom bar */
+  --fs-small: 0.875rem;
+  /* Tiny labels (badges) */
+  --fs-xs: 0.75rem;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Line heights: headings / body copy */
+  --lh-tight: 1.2;
+  --lh-snug: 1.4;
+  --lh-body: 1.65;
+
+  /* Letter spacing for eyebrow labels and headings */
+  --ls-eyebrow: 0.08em;
+  --ls-heading: -0.015em;
+}
+
+/* Base heading styles used site-wide */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-heading);
+  font-weight: var(--fw-bold);
+}
+
+h1 { font-size: var(--fs-h1); font-weight: var(--fw-extrabold); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+h5 { font-size: var(--fs-h5); }
+h6 {
+  font-size: var(--fs-h6);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+}

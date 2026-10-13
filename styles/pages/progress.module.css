@@ -1,0 +1,138 @@
+/* Progress page — vertical timeline and milestone progress bars */
+
+/* ---------- Timeline ---------- */
+.timeline {
+  position: relative;
+  max-width: var(--container-narrow);
+  padding-left: var(--space-5);
+}
+
+/* The vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: var(--space-2);
+  bottom: var(--space-2);
+  left: calc(var(--dot-size) / 2 - var(--border-width-thick) / 2);
+  width: var(--border-width-thick);
+  background-color: var(--color-border);
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: var(--space-5);
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+/* Dot on the line for each year */
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  top: var(--space-2);
+  left: calc(-1 * var(--space-5));
+  width: var(--dot-size);
+  height: var(--dot-size);
+  background-color: var(--color-bg);
+  border: var(--border-width-thick) solid var(--color-primary);
+  border-radius: var(--radius-pill);
+}
+
+.timelineItemLatest::before {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.timelineYear {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--color-accent);
+}
+
+.timelineTitle {
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-h4);
+}
+
+.timelineText {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Split layout: intro + milestones ---------- */
+.milestoneGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-5) var(--grid-gap);
+}
+
+.milestoneIntro,
+.milestoneList {
+  grid-column: 1 / -1;
+}
+
+.milestoneUpdated {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.milestoneList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.milestoneRow {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+  font-weight: var(--fw-medium);
+  color: var(--color-heading);
+}
+
+.milestonePercent {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: var(--color-primary);
+}
+
+/* Native <progress> element, restyled */
+.progressBar {
+  display: block;
+  width: 100%;
+  height: var(--progress-height);
+  appearance: none;
+  border: none;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-border);
+  overflow: hidden;
+}
+
+.progressBar::-webkit-progress-bar {
+  background-color: var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.progressBar::-webkit-progress-value {
+  background-color: var(--color-accent);
+  border-radius: var(--radius-pill);
+}
+
+.progressBar::-moz-progress-bar {
+  background-color: var(--color-accent);
+  border-radius: var(--radius-pill);
+}
+
+@media (min-width: 900px) {
+  .milestoneIntro {
+    grid-column: 1 / span 4;
+  }
+
+  .milestoneList {
+    grid-column: 6 / -1;
+  }
+}

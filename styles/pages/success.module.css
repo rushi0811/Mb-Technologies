@@ -1,0 +1,154 @@
+/* Success page — highlight numbers + before/after case study cards */
+
+.highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+}
+
+.highlight {
+  padding: var(--space-4);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+}
+
+.highlightValue {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  color: var(--color-heading);
+}
+
+.highlightLabel {
+  color: var(--color-text-muted);
+}
+
+/* ---------- Filter tabs ---------- */
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.filterButton {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-pill);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.filterButton:hover {
+  border-color: var(--color-primary);
+}
+
+.filterButtonActive {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+/* ---------- Case study cards ---------- */
+.caseGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+}
+
+.caseHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.casePhoto {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+}
+
+.caseType {
+  display: inline-block;
+  margin-bottom: var(--space-1);
+  padding: 0 var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--color-primary);
+  background-color: var(--color-primary-soft);
+  border-radius: var(--radius-sm);
+}
+
+.caseTitle {
+  font-size: var(--fs-h4);
+}
+
+.caseName {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+/* Two-column before → after comparison */
+.compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.compareBox {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-small);
+}
+
+.compareBefore {
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.compareAfter {
+  background-color: var(--color-accent-soft);
+  color: var(--color-text);
+}
+
+.compareLabel {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+}
+
+.caseDetail {
+  margin-top: auto;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 600px) {
+  .highlights {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .compare {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .caseGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

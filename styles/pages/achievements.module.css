@@ -1,0 +1,115 @@
+/* Achievements page — awards grid and photo gallery */
+
+.awardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.awardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.awardIcon {
+  width: var(--icon-md);
+  height: var(--icon-md);
+  color: var(--color-accent);
+}
+
+.awardYear {
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-muted);
+}
+
+.awardCategory {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-eyebrow);
+  color: var(--color-primary);
+}
+
+.awardTitle {
+  margin-bottom: var(--space-2);
+  font-size: var(--fs-h5);
+  line-height: var(--lh-snug);
+}
+
+.awardIssuer {
+  margin-top: auto;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Gallery: mixed-size grid ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.galleryItem {
+  margin: 0;
+}
+
+.galleryImageWrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.galleryImage {
+  object-fit: cover;
+}
+
+.galleryCaption {
+  margin-top: var(--space-2);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 600px) {
+  .awardGrid,
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .awardGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  /* First photo spans two columns and two rows for variety */
+  .galleryFeatured {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  /* Let the featured photo stretch to fill both rows */
+  .galleryFeatured .galleryItem {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .galleryFeatured .galleryImageWrap {
+    flex: 1;
+    aspect-ratio: auto;
+  }
+}

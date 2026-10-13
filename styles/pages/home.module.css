@@ -1,0 +1,204 @@
+/* Home page sections (Hero and Testimonials have their own component modules) */
+
+/* ---------- About: split image / text ---------- */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-6) var(--grid-gap);
+  align-items: center;
+}
+
+.aboutMedia,
+.aboutContent {
+  grid-column: 1 / -1;
+}
+
+.aboutImageWrap {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.aboutImage {
+  object-fit: cover;
+}
+
+.aboutText {
+  margin-bottom: var(--space-3);
+}
+
+.aboutFacts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.aboutFactTitle {
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-h5);
+}
+
+.aboutFactText {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Module previews: numbered link list ---------- */
+.moduleGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.moduleItem {
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.moduleLink {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-3);
+  align-items: start;
+  padding: var(--space-4) var(--space-2);
+  transition: background-color var(--transition-base);
+}
+
+.moduleLink:hover {
+  background-color: var(--color-bg-alt);
+}
+
+.moduleNumber {
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-bold);
+  color: var(--color-accent);
+}
+
+.moduleTitle {
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-h4);
+}
+
+.moduleText {
+  color: var(--color-text-muted);
+}
+
+.moduleArrow {
+  width: var(--icon-md);
+  height: var(--icon-md);
+  color: var(--color-primary);
+  transition: transform var(--transition-base);
+}
+
+.moduleLink:hover .moduleArrow {
+  transform: translateX(var(--space-1));
+}
+
+/* ---------- Stats band ---------- */
+.statsBand {
+  padding-block: var(--space-7);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.statsList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5) var(--grid-gap);
+}
+
+/* Label comes first in the markup (dt), but the number is shown on top */
+.statItem {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-left: var(--space-3);
+  border-left: var(--border-width-thick) solid var(--color-accent);
+}
+
+.statValue {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: var(--fs-display);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+}
+
+.statLabel {
+  font-size: var(--fs-small);
+  color: var(--color-on-primary-muted);
+}
+
+/* ---------- CTA band ---------- */
+.ctaBand {
+  padding-block: var(--space-7);
+  background-color: var(--color-bg);
+}
+
+.ctaInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-4);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-lg);
+}
+
+.ctaInner :focus-visible {
+  outline-color: var(--color-focus-on-dark);
+}
+
+.ctaTitle {
+  margin-bottom: var(--space-2);
+  color: var(--color-on-primary);
+}
+
+.ctaText {
+  color: var(--color-on-primary-muted);
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ---------- Breakpoints ---------- */
+@media (min-width: 600px) {
+  .moduleGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+  }
+}
+
+@media (min-width: 900px) {
+  .aboutMedia {
+    grid-column: 1 / span 5;
+  }
+
+  .aboutContent {
+    grid-column: 7 / -1;
+  }
+
+  .statsBand {
+    padding-block: var(--space-8);
+  }
+
+  .statsList {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .ctaBand {
+    padding-block: var(--space-8);
+  }
+
+  .ctaInner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-6);
+  }
+}

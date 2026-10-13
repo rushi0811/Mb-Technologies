@@ -1,0 +1,73 @@
+/* Header — sticky bar holding logo, Menu and Contact button */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background-color: var(--color-bg);
+  border-bottom: var(--border-width) solid transparent;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+/* Applied once the page has scrolled a few pixels */
+.headerScrolled {
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: calc(var(--container-max) + 2 * var(--container-gutter));
+  height: var(--header-height);
+  margin-inline: auto;
+  padding-inline: var(--container-gutter);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  font-family: var(--font-heading);
+  font-size: var(--fs-h5);
+  font-weight: var(--fw-extrabold);
+  color: var(--color-heading);
+  letter-spacing: var(--ls-heading);
+}
+
+/* Small amber square before the wordmark */
+.logoMark {
+  display: inline-block;
+  width: var(--space-2);
+  height: var(--space-2);
+  margin-right: var(--space-1);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+.logoLight {
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Contact button is moved into the slide-in panel on small screens */
+.contactButton {
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .contactButton {
+    display: inline-flex;
+  }
+}

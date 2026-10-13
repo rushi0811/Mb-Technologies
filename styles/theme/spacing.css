@@ -1,0 +1,84 @@
+/* ==========================================================================
+   SPACING — 8px scale, containers, radii, borders, shadows, motion, layers.
+   Note: CSS custom properties cannot be used inside @media conditions, so the
+   breakpoints (600px / 900px / 1100px) are written literally in module files.
+   ========================================================================== */
+
+:root {
+  /* 8px spacing scale (space-1 = 4px half-step for tight gaps) */
+  --space-1: 0.25rem;  /* 4px  — icon gaps */
+  --space-2: 0.5rem;   /* 8px  — tag padding, small gaps */
+  --space-3: 1rem;     /* 16px — default gap, mobile gutter */
+  --space-4: 1.5rem;   /* 24px — card padding */
+  --space-5: 2rem;     /* 32px — grid gaps */
+  --space-6: 3rem;     /* 48px — block spacing */
+  --space-7: 4rem;     /* 64px — section padding (mobile) */
+  --space-8: 6rem;     /* 96px — section padding (desktop) */
+
+  /* Max content width (12-column grid lives inside this) */
+  --container-max: 75rem; /* 1200px */
+  /* Narrow width for long-form text blocks and forms */
+  --container-narrow: 45rem; /* 720px */
+  /* Side gutter of every container */
+  --container-gutter: var(--space-3);
+  /* Grid gap of the 12-column layout */
+  --grid-gap: var(--space-5);
+
+  /* Header height — also used to offset anchor scroll */
+  --header-height: 4.5rem;
+  /* Width of the mobile slide-in menu */
+  --menu-panel-width: 20rem;
+
+  /* Border radii: inputs/tags, cards/images, pills */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-pill: 999px;
+
+  /* Hairline width for all borders */
+  --border-width: 1px;
+  /* Accent rule thickness (timeline line, active nav underline) */
+  --border-width-thick: 2px;
+  /* Focus outline thickness and offset */
+  --focus-width: 2px;
+  --focus-offset: 2px;
+
+  /* Shadows: header on scroll, cards on hover, modal */
+  --shadow-sm: 0 1px 2px rgba(11, 37, 69, 0.06);
+  --shadow-md: 0 6px 18px rgba(11, 37, 69, 0.08);
+  --shadow-lg: 0 18px 48px rgba(11, 37, 69, 0.18);
+
+  /* Icon sizes used with lucide-react */
+  --icon-sm: 1rem;
+  --icon-md: 1.25rem;
+
+  /* Avatar size in testimonials and stories */
+  --avatar-size: 3rem;
+  /* Height of progress bars */
+  --progress-height: 0.5rem;
+  /* Timeline dot size */
+  --dot-size: 0.875rem;
+
+  /* Motion: all hover/state transitions stay within 150–250ms */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 250ms ease;
+
+  /* Max width of the fact card overlapping the hero photo */
+  --hero-badge-width: 16rem;
+  /* Max width of the job detail modal */
+  --modal-width: 45rem;
+
+  /* Stacking order */
+  --z-header: 50;
+  --z-overlay: 90;
+  --z-panel: 100;
+  --z-modal: 110;
+}
+
+/* Wider gutters on larger screens */
+@media (min-width: 900px) {
+  :root {
+    --container-gutter: var(--space-5);
+  }
+}
